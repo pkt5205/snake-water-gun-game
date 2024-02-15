@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Snake Water Gun</title>
+<style>
+	.container{
+		background-color: rgb(233, 131, 202);
+		margin: 70px;
+		text-align: center;
+        border-radius: 5px;
+		padding: 20px;
+	}
+	.buttons{
+		height: 100px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+	<div>
+		<h1>Choose One From Below</h1>
+	</div>
+	<div class="buttons">
+		<button type="button" style="background-color:blueviolet;" id="snk">SNAKE</button>
+		<button type="button" style="background-color: aqua;" id="wtr">WATER</button>
+		<button type="button" style="background-color: chartreuse;" id="gn">GUN</button>
+	</div>
+	</div>
+</body>
+<script>
+	let snake = document.getElementById("snk");
+	let water = document.getElementById("wtr");
+	let gun = document.getElementById("gn");
+	let arr = ["snake" , "water", "gun"];
+	let userChoice = null;
+	let compChoice = null;
+
+	snake.addEventListener("click" , function(){
+		userChoice = "snake";
+		compChoice = arr[Math.floor(Math.random() * arr.length)];
+		alert("Computer has chosen " + compChoice);
+		if(compChoice == "snake"){
+			alert("No One Loses,Match is Drawn");
+		}
+		else if(compChoice == "water"){
+			alert("User Won");
+		}
+		else{
+			alert("Computer Won");
+		}
+	});
+	water.addEventListener("click" , function(){
+		userChoice = "water";
+		compChoice = arr[Math.floor(Math.random() * arr.length)];
+		alert("Computer has chosen " + compChoice);
+		if(compChoice == "snake"){
+			alert("Computer Won");
+		}
+		else if(compChoice == "water"){
+			alert("No One Loses,Match is Drawn");
+		}
+		else{
+			alert("User Won");
+		}
+	});
+	gun.addEventListener("click" , function(){
+		userChoice = "gun";
+		compChoice = arr[Math.floor(Math.random() * arr.length)];
+		alert("Computer has chosen " + compChoice);
+		if(compChoice == "snake"){
+			alert("User Won");
+		}
+		else if(compChoice == "water"){
+			alert("Computer Won");
+		}
+		else{
+			alert("No One Loses,Match is Drawn");
+		}
+	});
+
+	
+	
+	
+	
+
+
+
+</script>
+</html>
